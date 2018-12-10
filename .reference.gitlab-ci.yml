@@ -1,0 +1,12 @@
+image: mhart/alpine-node
+
+build:
+  stage: build
+  script:
+    - apk add --no-cache git
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build
+    expire_in: 1 day
